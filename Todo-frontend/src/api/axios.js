@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api=axios.create({
 
-baseURL:"https://todo-app-lemon-eta-32.vercel.app"
+baseURL:import.meta.env.VITE_BASE_URL
 
 });
 
