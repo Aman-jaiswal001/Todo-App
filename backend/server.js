@@ -3,6 +3,7 @@ import 'dotenv/config'
 import cors from 'cors'
 import connectDB from './config/db.js'
 import todoRouter from './Routes/todoRouter.js'
+import authRouter from './Routes/authRoutes.js'
 
 const app = express()
 
@@ -13,6 +14,7 @@ await connectDB();
 
 //routes
 app.get('/', (req , res) => res.send('Server is running'))
+app.use("/api/auth", authRouter);
 app.use('/api',todoRouter);
 
 const PORT = process.env.PORT || 3001
